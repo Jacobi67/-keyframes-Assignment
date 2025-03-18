@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>.box {
+        position: relative;
+        animation: geeks 5s infinite;
+        animation-play-state: paused;
+    height: 200px;
+    font-size: 40px;
+     text-align: center;
+    }
+      
+    @keyframes geeks {
+       0% {
+            left: 0px;
+         top:0px;
+          width: 500px;
+             background: pink;
+         border-radius: 0%;
+      
+            
+        }
+        50% {
+            left: 250px;
+          background: orange;
+          top:40px;
+           width: 250px;
+              border-radius: 50%;
+        
+        }
+          100% {
+            left: 500px;
+         top:80px;
+             width: 500px;
+             background: pink;
+         border-radius: 0%;
+            
+        }
+    }
+
+.box.horizTranslate {
+        animation-play-state: running;
+    }
+      
+
+/* makes it so it starts and stops when you hover over the div */
+
+.box:hover {
+        animation-play-state: running;
+    }
+
+
+
+
+
+.box2 {
+        position: relative;
+        animation: geeks2 5s infinite;
+        animation-play-state: paused;
+    height: 200px;
+    font-size: 40px;
+     text-align: center;
+    }
+      
+    @keyframes geeks2 {
+       0% {
+            left: 0px;
+         top:60px;
+          width: 500px;
+             background: red;
+         border-radius: 0%;
+      
+            
+        }
+      
+       25% {
+            left: 110px;
+         top:0px;
+          width: 500px;
+             background: red;
+         border-radius: 25%;
+      
+            
+        }
+        50% {
+            left: 250px;
+          background: orange;
+          top:40px;
+           width: 250px;
+              border-radius: 50%;
+              clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      
+        }
+      
+       75% {
+            left: 0px;
+         top:80px;
+          width: 500px;
+             background: green;
+         border-radius: 78%;
+      
+            
+        }
+          100% {
+            left: 500px;
+         top:100px;
+             width: 500px;
+             background: pink;
+         border-radius: 0%;
+            
+        }
+    }
+
+.box2.horizTranslate2 {
+        animation-play-state: running;
+    }
+      
+
+/* makes it so it starts and stops when you hover over the div */
+
+.box2:hover {
+        animation-play-state: running;
+    }</style>
+</head>
+<body>
+    <button class='toggleButton' onclick='toggleTransition()'>Toggle</button>
+<p>
+        Hover over the GeeksforGeeks 
+        to run the animation.
+    </p>
+  
+    <div class="box">GeeksforGeeks</div>
+  
+  
+  
+  
+  <br>
+  
+  
+   <button class='toggleButton2' onclick='toggleTransition2()'>Toggle</button>
+<p>
+        Hover over the GeeksforGeeks 
+        to run the animation.
+    </p>
+  
+    <div class="box2">GeeksforGeeks</div>
+    
+    <script>var boxOne = document.getElementsByClassName('box')[0];
+        var running = false;
+        
+        var toggleTransition = function() {
+          if(!running) 
+          { 
+            boxOne.classList.add('horizTranslate');
+          } else {
+            boxOne.classList.remove('horizTranslate'); 
+          }  
+        
+          running = !running;
+        }
+        
+        
+        
+        
+        var boxOne2 = document.getElementsByClassName('box2')[0];
+        var running2 = false;
+        
+        var toggleTransition2 = function() {
+          if(!running2) 
+          { 
+            boxOne2.classList.add('horizTranslate2');
+          } else {
+            boxOne2.classList.remove('horizTranslate2'); 
+          }  
+        
+          running2 = !running2;
+        }</script>
+</body>
+</html>
